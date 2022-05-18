@@ -1,0 +1,17 @@
+{
+  "name": "newsfeed-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "demot.js",
+  "type": "module",
+  "scripts": {
+    "test": "node demo.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "contentful": "^9.1.28",
+    "getstream": "^8.0.1",
+    "node-fetch": "^2.6.1"
+  }
+}
