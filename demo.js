@@ -2,6 +2,7 @@ import fetch from 'node-fetch';
 import { connect } from 'getstream';
 import pkg from 'contentful';
 const {createClient} = pkg;
+import ogs from 'open-graph-scraper';
 
 const SCONE_ROOT_URL = 'https://api.scone.ai/api/v2';
 const LOCALES = ['nl-NL', 'en-US', 'de-DE', 'fr-FR', 'pt-PT']
@@ -64,6 +65,13 @@ if (!LOCALES.includes(locale)) {
       console.log('linkHeadline:', entity?.fields.linkHeadline)
       console.log('description:')
       console.log(entity?.fields.description)
+      if (entity?.fields.link) {
+        const ogResult = await ogs({url: entity?.fields.link})
+        console.log('link title:', ogResult.result.ogTitle)
+        console.log('link description:', ogResult.result.ogDescription)
+        console.log('link type:', ogResult.result.ogType)
+        console.log('link image:', ogResult.result.ogImage.url)
+      }
       console.log()
     }
   }

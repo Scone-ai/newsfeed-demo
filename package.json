@@ -12,6 +12,7 @@
   "dependencies": {
     "contentful": "^9.1.28",
     "getstream": "^8.0.1",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "open-graph-scraper": "^4.11.0"
   }
 }
